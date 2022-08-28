@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'registro',
     'tarjetas',
     'crispy_forms',
-    'apps.registro',
     
     
 ]
