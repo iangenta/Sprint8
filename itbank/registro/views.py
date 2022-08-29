@@ -15,7 +15,7 @@ class registro(View):
         if form.is_valid():
            usuario = form.save()
            login(request, usuario)
-           return redirect('index_clientes') #aca tiene que redireccionar al home
+           return redirect('registro/registro.html') #aca tiene que redireccionar al home
         else:
             for msg in form.error_messages:
                 messages.error(request, form.error_messages[msg])
@@ -23,7 +23,7 @@ class registro(View):
         
 def cerrar_sesion(request):
     logout(request)
-    return redirect('home') #aca tiene que redireccionar al home
+    return redirect('registro/registro.html') #aca tiene que redireccionar al home
 
 def iniciar_sesion(request):
     if request.method == "POST":
@@ -34,7 +34,7 @@ def iniciar_sesion(request):
             usuario = authenticate(username = nombre_usuario, password = contraseña)
             if usuario is not None:
                 login(request , usuario)
-                return redirect('index_clientes') #aca tiene que redireccionar al home
+                return redirect('registro/registro.html') #aca tiene que redireccionar al home
             else:
                 messages.error(request, "usuario no valido")
         else: 
