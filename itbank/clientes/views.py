@@ -11,7 +11,6 @@ from pprint import pprint
 
 class ClienteDetails(LoginRequiredMixin, APIView):
     
-    
     def get(self, request):
         
         DatosCliente = Cliente.objects.get(customer_name = User.get_username(request.user))
