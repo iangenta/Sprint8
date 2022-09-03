@@ -22,4 +22,10 @@ urlpatterns =  [
  path('clientes/', include('clientes.urls'), name='clientes' ),
  path('prestamos/', include('prestamos.urls'), name='prestamos' ),
  path('sucursales/', include('sucursales.urls'), name='sucursales' ),
+ path('VerTarjetas/', include('VerTarjetas.urls'), name='VerTarjetas' ),
+ 
+ 
+ 
+ 
+ 
   ] 
