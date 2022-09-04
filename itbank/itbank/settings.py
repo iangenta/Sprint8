@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'sucursales',
     'VerTarjetas',
     'PrestamosSucursal',
-    
+    'SaldoCuenta',
     
 ]
 
