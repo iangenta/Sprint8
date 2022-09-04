@@ -15,10 +15,6 @@ class AuthUserDetails(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 
-
-
-
-
 class AuthUserList(APIView):
     
     def get(self, request): # nuevo
