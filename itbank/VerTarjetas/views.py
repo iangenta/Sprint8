@@ -11,12 +11,10 @@ from django.contrib.auth.models import User
 
 class TarjetasList(APIView):
     def get(self, request, customer_id):
-        Usuario = User.objects.filter((request))
-        pprint(vars(Usuario))
+        user = User.objects.get(username = User.get_username(request.user))
+        pprint(user.is_superuser)
         Tarjetas = Tarjeta.objects.filter(customer_id=customer_id)
         serializer = TarjetasSerializers(Tarjetas, many = True)
-        if Tarjetas:
+        if Tarjetas & (user.is_staff == True):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
