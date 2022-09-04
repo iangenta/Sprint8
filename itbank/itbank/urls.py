@@ -23,7 +23,7 @@ urlpatterns =  [
  path('prestamos/', include('prestamos.urls'), name='prestamos' ),
  path('sucursales/', include('sucursales.urls'), name='sucursales' ),
  path('VerTarjetas/', include('VerTarjetas.urls'), name='VerTarjetas' ),
- 
+ path('PrestamosSucursal/', include('PrestamosSucursal.urls'), name='PrestamosSucursal' ),
  
  
  

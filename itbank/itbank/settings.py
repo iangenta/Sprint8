@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'sucursales',
     'VerTarjetas',
-    
+    'PrestamosSucursal',
     
     
 ]
