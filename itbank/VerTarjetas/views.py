@@ -15,6 +15,6 @@ class TarjetasList(APIView):
         pprint(user.is_superuser)
         Tarjetas = Tarjeta.objects.filter(customer_id=customer_id)
         serializer = TarjetasSerializers(Tarjetas, many = True)
-        if Tarjetas & (user.is_staff == True):
+        if user.is_staff == True:
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
