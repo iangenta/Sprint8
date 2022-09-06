@@ -1,20 +1,23 @@
-from .models import AuthUser
-from .serializers import TarjetasSerializers
+from .models import Cliente, TipoCliente, Cuenta
+from .serializers import TipoClienteSerializers, SaldoSerializers
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Tarjeta
 from pprint import pprint
 from django.contrib.auth.models import User
 # Create your views here.
 
-class TarjetasList(APIView):
-    def get(self, request, customer_id):
-        user = User.objects.get(username = User.get_username(request.user))
-        pprint(user.is_superuser)
-        Tarjetas = Tarjeta.objects.filter(customer_id=customer_id)
-        serializer = TarjetasSerializers(Tarjetas, many = True)
-        if user.is_staff == True:
-            return Response(serializer.data, status=status.HTTP_200_OK)
+class SaldoCuenta(APIView):
+    def get(self, request):
+        
+        ClienteAutenticado = Cliente.objects.get(customer_name = User.get_username(request.user)) #captura cliente
+        
+        tipo_cliente = TipoCliente.objects.get(customer_type_id = ClienteAutenticado.customer_type_id)
+        saldo = Cuenta.objects.get(customer_id = 9)
+        
+        serializer = SaldoSerializers(saldo)
+        serializer2 = TipoClienteSerializers(tipo_cliente)
+        if ClienteAutenticado:
+            return Response((serializer.data, serializer2.data), status=status.HTTP_404_NOT_FOUND)
         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)

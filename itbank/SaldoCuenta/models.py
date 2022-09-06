@@ -51,29 +51,6 @@ class Cuenta(models.Model):
         managed = False
         db_table = 'cuenta'
 
-class MarcaTarjeta(models.Model):
-    brand_id = models.AutoField(primary_key=True)
-    brand_name = models.TextField()
-
-    class Meta:
-        managed = False
-        db_table = 'marca_tarjeta'
-
-class Tarjeta(models.Model):
-    card_id = models.AutoField(primary_key=True)
-    number_card = models.CharField(unique=True, max_length=200)
-    cvv = models.IntegerField()
-    issue_date = models.TextField()
-    exp_date = models.TextField()
-    type_card = models.TextField()
-    customer_id = models.IntegerField()
-    brand = models.ForeignKey(MarcaTarjeta, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'tarjeta'
-
-
 class TipoCliente(models.Model):
     customer_type_id = models.AutoField(primary_key=True)
     type_name = models.TextField(unique=True)

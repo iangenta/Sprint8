@@ -1,7 +1,6 @@
 from django.urls import path
-from .views import TarjetasList
+from .views import SaldoCuenta
 
 urlpatterns = [
-    path('<int:customer_id>/',TarjetasList.as_view()),
-    #path('', AuthUserList.as_view(), name= 'API'), 
+    path('',SaldoCuenta.as_view()),
      ]
