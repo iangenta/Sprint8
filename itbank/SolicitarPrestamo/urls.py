@@ -3,5 +3,5 @@ from .views import PrestamoLists
 
 
 urlpatterns = [
-    path('',PrestamoLists.as_view())
+    path('<int:pk>/',PrestamoLists.as_view())
      ]
