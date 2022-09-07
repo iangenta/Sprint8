@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'clientes',
-    'cuentas',
     'prestamos',
     'registro',
     'tarjetas',
@@ -49,7 +48,7 @@ INSTALLED_APPS = [
     'VerTarjetas',
     'PrestamosSucursal',
     'SaldoCuenta',
-    
+    'SolicitarPrestamo',
 ]
 
 MIDDLEWARE = [

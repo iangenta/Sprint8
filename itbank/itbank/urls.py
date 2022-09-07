@@ -25,7 +25,7 @@ urlpatterns =  [
  path('VerTarjetas/', include('VerTarjetas.urls'), name='VerTarjetas' ),
  path('PrestamosSucursal/', include('PrestamosSucursal.urls'), name='PrestamosSucursal' ),
  path('SaldoCuenta/', include('SaldoCuenta.urls'), name='SaldoCuenta' ),
- 
+ path('SolicitarPrestamo/', include('SolicitarPrestamo.urls'), name='SolicitarPrestamo' ),
  
  
  ] 
