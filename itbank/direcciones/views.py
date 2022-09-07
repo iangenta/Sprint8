@@ -11,12 +11,12 @@ from pprint import pprint
 class DireccionF(LoginRequiredMixin, APIView):
     
     def get(self, request, pk):
-        DatosCliente = Cliente.objects.get(customer_name = User.get_username(request.user))
+        #DatosCliente = Cliente.objects.get(customer_name = User.get_username(request.user))
         
         user = User.objects.get(username = User.get_username(request.user))
         if user.is_staff == False:
-            pk = DatosCliente.customer_address_id
-            
+             DatosCliente = Cliente.objects.get(customer_name = User.get_username(request.user))
+             pk = DatosCliente.customer_address_id
         direccionCliente = Direccion.objects.get(address_id = pk)
         serializer = direccionSerializer(direccionCliente)
         if direccionCliente:
@@ -25,10 +25,11 @@ class DireccionF(LoginRequiredMixin, APIView):
 
     def put(self, request, pk):
         
-        DatosCliente = Cliente.objects.get(customer_name = User.get_username(request.user))
+        #DatosCliente = Cliente.objects.get(customer_name = User.get_username(request.user))
         
         user = User.objects.get(username = User.get_username(request.user))
         if user.is_staff == False:
+            DatosCliente = Cliente.objects.get(customer_name = User.get_username(request.user))
             pk = DatosCliente.customer_address_id
         
         direccionCliente = Direccion.objects.get(address_id = pk)
