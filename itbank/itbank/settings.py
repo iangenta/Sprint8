@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'PrestamosSucursal',
     'SaldoCuenta',
     'SolicitarPrestamo',
+    'direcciones',
 ]
 
 MIDDLEWARE = [
