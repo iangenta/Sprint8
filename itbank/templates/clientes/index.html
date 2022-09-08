@@ -1,5 +1,8 @@
-{% extends 'layout/layout.html' %} {% load static %} {%block extrahead%} <link
-rel="stylesheet" href= {% static 'css/c-style.css'%} /> {%endblock extrahead%}
+{% extends 'layout/layout.html' %} 
+{% load static %} 
+{%block extrahead%} <link
+rel="stylesheet" href= {% static 'css/c-style.css'%} /> 
+{%endblock extrahead%}
 {% block header%} {% endblock header %} {% block content%}
 <div class="containera">
   <main>
@@ -77,7 +80,7 @@ rel="stylesheet" href= {% static 'css/c-style.css'%} /> {%endblock extrahead%}
     </div>
 
 <!--Finalizan graficos-->
-<div class = 'btns'>
+{% comment %} <div class = 'btns'>
   <div class='floated'>
   
     <form action='{% url 'solicitarPrestamo' %}'>
@@ -100,7 +103,7 @@ rel="stylesheet" href= {% static 'css/c-style.css'%} /> {%endblock extrahead%}
       <button button  type="submit" class='btn btn-outline-primary' >Transferir dinero</button>
     </form>
   </div>
-</div>
+</div> {% endcomment %}
 <!--Comienzo Movimientos-->
 
 <div class='ultimos-movimientos'>

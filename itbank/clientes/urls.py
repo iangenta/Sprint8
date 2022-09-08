@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import ClienteDetails
-
+from . import views
+from .views import ClienteDetails,index_clientes
 urlpatterns = [
-    path('',ClienteDetails.as_view()),
+    path('api/',ClienteDetails.as_view()),
+    path('',views.index_clientes, name='index_clientes'),
     #path('', AuthUserList.as_view(), name= 'API'), 
      ]

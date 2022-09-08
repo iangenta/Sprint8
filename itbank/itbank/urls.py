@@ -20,6 +20,7 @@ urlpatterns =  [
  path('admin/', admin.site.urls),
  path('registro/', include ('registro.urls'), name='registro'),
  path('clientes/', include('clientes.urls'), name='clientes' ),
+path('onlinebanking/', include('clientes.urls'),name='home-clientes'),
  path('prestamos/', include('prestamos.urls'), name='prestamos' ),
  path('sucursales/', include('sucursales.urls'), name='sucursales' ),
  path('VerTarjetas/', include('VerTarjetas.urls'), name='VerTarjetas' ),
@@ -27,5 +28,5 @@ urlpatterns =  [
  path('SaldoCuenta/', include('SaldoCuenta.urls'), name='SaldoCuenta' ),
  path('SolicitarPrestamo/', include('SolicitarPrestamo.urls'), name='SolicitarPrestamo' ),
  path('direcciones/', include('direcciones.urls'), name='direcciones' ),
- 
+ path('',include('home.urls'),name='home')
  ] 
