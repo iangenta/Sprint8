@@ -1,0 +1,228 @@
+{% extends 'layout/layout.html' %} {% load static %} {%block extrahead%} <link
+rel="stylesheet" href= {% static 'css/c-style.css'%} /> {%endblock extrahead%}
+{% block header%} {% endblock header %} {% block content%}
+<div class="containera">
+  <main>
+    <h1>Bienvenido de nuevo {{user.username}}</h1>
+
+    <h4> Cuenta:{{clase}}</h4>
+      <h4>cliente: {{tipo_cliente}}</h4>
+    <div class="date">
+      <input type="date" />
+    </div>
+
+    <div class="insights">
+      <div class="balance-total">
+        <span class="material-symbols-outlined"> account_balance_wallet </span>
+
+        <div class="middle">
+          <div class="left">
+            <h3>Tu balance total</h3>
+            <h1>{{balance}}</h1>
+          </div>
+
+          <div class="progress">
+            <svg>
+              <circle cx="38" cy="38" r="36"></circle>
+            </svg>
+            <div class="number">
+              <p>100%</p>
+            </div>
+          </div>
+        </div>
+        <small class="text-muted">Last 24 hours</small>
+      </div>
+      <!--_____________balance end_____________-->
+      <div class="gastos-expenses">
+        <span class="material-symbols-outlined"> money_off </span>
+
+        <div class="middle">
+          <div class="left">
+            <h3>Dinero gastado</h3>
+            <h1>20000</h1>
+          </div>
+
+          <div class="progress">
+            <svg>
+              <circle cx="38" cy="38" r="36"></circle>
+            </svg>
+            <div class="number">
+              <p>30%</p>
+            </div>
+          </div>
+        </div>
+        <small class="text-muted">Last 24 hours</small>
+      </div>
+      <!--_____________ end_____________-->
+      <div class="dinero-invertido">
+        <span class="material-symbols-outlined"> bar_chart </span>
+
+        <div class="middle">
+          <div class="left">
+            <h3>Dinero invertido</h3>
+            <h1>20000</h1>
+          </div>
+
+          <div class="progress">
+            <svg>
+              <circle cx="38" cy="38" r="36"></circle>
+            </svg>
+            <div class="number">
+              <p>80%</p>
+            </div>
+          </div>
+        </div>
+        <small class="text-muted">Last 24 hours</small>
+      </div>
+    </div>
+
+<!--Finalizan graficos-->
+<div class = 'btns'>
+  <div class='floated'>
+  
+    <form action='{% url 'solicitarPrestamo' %}'>
+      <button type="submit" class='btn btn-outline-primary'>  Solicitar un prestamo </button>
+    </form>
+  
+  </div>
+
+  <div class='floated'>
+
+    <form action="#">
+      <button  type="submit" class='btn btn-outline-primary'>Inversiones</button>
+    </form>
+  
+  </div>
+  
+
+  <div class='floated'>
+    <form action="#">
+      <button button  type="submit" class='btn btn-outline-primary' >Transferir dinero</button>
+    </form>
+  </div>
+</div>
+<!--Comienzo Movimientos-->
+
+<div class='ultimos-movimientos'>
+    <h2>Ultimos movimientos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Tipo de Movimiento</th>
+                <th>Monto</th>                
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Detalles</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Detalles</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Detalles</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Detalles</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Detalles</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Detalles</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Detalles</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <!--fin Movimientos-->
+
+    <a href='#'>Ver todos</a>
+</div>
+
+  </main>
+    <!--fin main-->
+
+
+    <div class='right'>
+        <div class='recent-updates'>
+            <div class='update'>
+                <div class='message'>
+                    <p><b>{{user.username}}</b>
+                        Transfirió $10000
+                    </p>
+                    <small class='text-muted'> hace 10 min</small>
+            </div>
+            <div class='update'>
+                <div class='message'>
+                    <p><b>{{user.username}}</b>
+                        Gastó $3000 en Algo
+                    </p>
+                    <small class='text-muted'> hace 10 min</small>
+            </div>
+            <div class='update'>
+                <div class='message'>
+                    <p><b>{{user.username}}</b>
+                        Recibió $1000 de Inversiones
+                    </p>
+                    <small class='text-muted'> hace 10 min</small>
+            </div>
+            <div class='update'>
+                <div class='message'>
+                    <p><b>{{user.username}}</b>
+                        Recibió $30000
+                    </p>
+                    <small class='text-muted'> hace 10 min</small>
+            </div>
+            <div class='update'>
+                <div class='message'>
+                    <p><b>{{user.username}}</b>
+                        Invirtió $1000
+                    </p>
+                    <small class='text-muted'> hace 1 hora</small>
+            </div>
+        </div>
+    <!-- analytics-->
+
+
+    </div>
+
+
+
+
+
+
+</div>
+{% endblock content %} {% block footer%} {% endblock footer %}
